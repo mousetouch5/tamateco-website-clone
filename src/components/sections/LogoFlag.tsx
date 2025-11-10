@@ -118,6 +118,7 @@ export default function Logo() {
           </a>
         ))}
       </Marquee>
+      <FooterPartners first={firstHalf} second={secondHalf} />
 
       <style jsx>{`
         .banner {
@@ -171,6 +172,32 @@ export default function Logo() {
           }
         }
       `}</style>
+    </div>
+  );
+}
+
+function FooterPartners({
+  first,
+  second,
+}: {
+  first: { name: string }[];
+  second: { name: string }[];
+}) {
+  // Collect unique names (avoid duplicates from marquee duplication)
+  const names = Array.from(new Set([...first, ...second].map((x) => x.name)));
+
+  return (
+    <div className="max-w-5xl mx-auto px-4">
+      <p
+        className="text-xs text-gray-500/90 text-center leading-5 [word-spacing:.2rem]"
+        aria-label="Partner manufacturers list"
+      >
+        {names.join(" • ")}
+      </p>
+      {/* Optional legal line — uncomment if you want this vibe */}
+      {/* <p className="mt-1 text-[10px] text-gray-400 text-center">
+        © 2025 All manufacturer names are trademarks of their respective owners.
+      </p> */}
     </div>
   );
 }

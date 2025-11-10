@@ -12,6 +12,7 @@ import Profile from "@/components/sections/Profile";
 import Contact from "@/components/sections/Contact";
 import Logos from "@/components/sections/LogoFlag";
 import ScrollTopButton from "@/components/ui/ScrollTopButton";
+import PartnerList from "@/components/sections/Partner-list";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">

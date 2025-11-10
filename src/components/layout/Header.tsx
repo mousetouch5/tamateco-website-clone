@@ -20,7 +20,7 @@ export default function Header() {
 
     // Micro-adjust up a touch for polished alignment
     setTimeout(() => {
-      window.scrollBy({ top: -20, behavior: "smooth" });
+      window.scrollBy({ top: -40, behavior: "smooth" });
     }, 500);
 
     // Close mobile menu if open
@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-l from-black via-black to-yellow-700 to black shadow-md">
       <div className="mx-auto w-full max-w-[1200px] px-12">
         {/* TOP BAR */}
         <div className="flex items-center h-28">
@@ -69,10 +69,24 @@ export default function Header() {
               </a>
 
               {/* These still use anchors normally; you can convert them the same way if needed */}
-              <a href="#Company" className="hover:text-gray-200 transition">
+              <a
+                href="#Company"
+                className="hover:text-gray-200 transition"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToId("Company");
+                }}
+              >
                 Company
               </a>
-              <a href="#Contact" className="hover:text-gray-200 transition">
+              <a
+                href="#Contact"
+                className="hover:text-gray-200 transition"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToId("Contact");
+                }}
+              >
                 Contact
               </a>
             </nav>
